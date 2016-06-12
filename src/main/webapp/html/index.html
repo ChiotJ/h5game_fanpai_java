@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app="app" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content=""/>
+
+    <title>2016欧洲杯记忆大考验！郑州万象城送大礼</title>
+
+    <script>
+        var meta = document.getElementsByTagName('meta');
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            for (var i = 0; i < meta.length; i++) {
+                if (meta[i].getAttribute('name') == "viewport") {
+                    meta[i].setAttribute('content', "width=device-width,user-scalable=no,initial-scale=0.5");
+                }
+            }
+        } else {
+            for (var i = 0; i < meta.length; i++) {
+                if (meta[i].getAttribute('name') == "viewport") {
+                    meta[i].setAttribute('content', "width=device-width,user-scalable=no,target-densitydpi=320,initial-scale=0.5");
+                }
+            }
+
+        }
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) != "micromessenger") {
+            window.location.href = "noWX.html"
+        }
+
+    </script>
+
+    <script src="lib/jquery-2.2.3.min.js"></script>
+
+    <script src="lib/angular-1.5.5/angular.min.js"></script>
+    <script src="lib/angular-1.5.5/angular-animate.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+
+    <script src="lib/nProgress/nprogress.js"></script>
+    <link rel="stylesheet" href="lib/nProgress/nprogress.css">
+
+
+    <script src="lib/iscroll.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/config/router.js"></script>
+    <script src="js/config/development.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/page.css">
+
+</head>
+<body ng-controller="ApplicationController">
+<audio id="bgm" src="imgs/bgm.mp3" autoplay loop></audio>
+<img src="imgs/musicOpen.png" alt="" ng-style="musicIO" class="musicIO" bgm-audio>
+<div class="blackMate" ng-style="blackMate" ng-show="isShowBlackMate"></div>
+<div ui-view class="page {{ pageClass }}" ng-style="page"></div>
+
+</body>
+</html>

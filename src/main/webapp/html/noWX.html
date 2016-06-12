@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=""/>
+
+    <title>2016欧洲杯记忆大考验！郑州万象城送大礼</title>
+
+    <script>
+        var meta = document.getElementsByTagName('meta');
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            for (var i = 0; i < meta.length; i++) {
+                if (meta[i].getAttribute('name') == "viewport") {
+                    meta[i].setAttribute('content', "width=device-width,user-scalable=no,initial-scale=0.5");
+                }
+            }
+        } else {
+            for (var i = 0; i < meta.length; i++) {
+                if (meta[i].getAttribute('name') == "viewport") {
+                    meta[i].setAttribute('content', "width=device-width,user-scalable=no,target-densitydpi=320,initial-scale=0.5");
+                }
+            }
+
+        }
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            window.location.href = "index.html"
+        }
+
+    </script>
+</head>
+<body>
+<div style="width: 100%;height: 100%; background: #08315E;color: #FFFFFF;font-size: 50px;text-align: center;line-height: 400px;min-height: 400px;">
+    请在微信中打开
+</div>
+</body>
+</html>

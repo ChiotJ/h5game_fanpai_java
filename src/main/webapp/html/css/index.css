@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+    font-family: Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+
+body {
+    background: #08315E;
+}
+
+.page {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.blackMate {
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 13;
+}
+
+#bgm {
+    display: none;
+}
+
+.pageHome {
+    overflow: hidden;
+    position: relative;
+}
+
+.background_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.musicIO {
+    position: absolute;
+    z-index: 999;
+}
+
+.pageHome .main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.pageHome .main .startGame,
+.pageHome .main .rules,
+.pageHome .main .prize,
+.pageHome .main .ranking {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.pageHome .main .rules,
+.pageHome .main .prize,
+.pageHome .main .ranking {
+    float: left;
+}
+
+.pageHome .main .notice {
+    color: #FFFFFF;
+    text-align: center;
+    overflow: hidden;
+}
+
+.pageHome .main .detail {
+    transition: opacity 0.3s;
+    display: none;
+    opacity: 0;
+}
+
+.pageHome .main #rulesContent, .pageHome .main #rankingContent {
+    position: absolute;
+    overflow: hidden;
+}
+
+.pageHome .main #rulesContent img {
+    display: block;
+    margin: 0 auto;
+}
+
+.pageHome .main #rankingContent div {
+    float: left;
+    color: #C1CD87;
+    text-align: center;
+    overflow: hidden;
+}
+
+.pageGame .card {
+    float: left;
+    position: relative;
+    border: 2px solid transparent;
+    overflow: hidden;
+}
+
+.pageGame .card .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-property: opacty, transform, box-shadow;
+    transition-duration: .5s;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.pageGame .card .front {
+    z-index: 10
+}
+
+.pageGame .card .back {
+    transform: rotate3d(0, 1, 0, -180deg);
+    z-index: 8;
+}
+
+.pageGame .card-flipped .front {
+    transform: rotate3d(0, 1, 0, 180deg);
+    z-index: 8;
+}
+
+.pageGame .card-flipped .back {
+    transform: rotate3d(0, 1, 0, 0deg);
+    z-index: 10;
+}
+
+.pageGame .card-removed .front {
+    transform: rotate3d(0, 1, 0, 180deg);
+    z-index: 8;
+}
+
+.pageGame .card-removed .back {
+    transform: rotate3d(0, 1, 0, 0deg);
+    z-index: 10;
+}
+
+.pageGame .card-removed {
+    border-radius: 12px;
+    border-color: #2AFF00;
+}
+
+.pageGame .card-flipped.card-flipped-error {
+    border-radius: 12px;
+    border-color: #FF6666;
+}
+
+.pageGame .rememberTimeNum {
+    background-color: #FCD009;
+    position: absolute;
+    text-align: center;
+    color: #5f5f5f;
+    overflow: hidden;
+}
+
+.pageGame .rememberTimeStr {
+    background-color: #FCF903;
+    position: absolute;
+    text-align: center;
+    color: #5f5f5f;
+}
+
+.pageGame #rememberTime {
+    transition: opacity 0.3s;
+    opacity: 1;
+    display: none;
+}
+
+.pageGame #gameRecordTime {
+    transition: opacity 0.3s;
+    opacity: 0;
+    display: none;
+}
+
+.pageGame .finish {
+    position: absolute;
+    z-index: 1;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+}
+
+.pageGame .finish .finish_bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pageGame .finish .title {
+    text-align: center;
+    overflow: hidden;
+}
+
+.pageGame .finish .finish_input {
+    border-radius: 10px;
+    background-color: #E3FFFF;
+}
+
+.pageGame .finish .finish_input input {
+    border: none;
+    background-color: #E3FFFF;
+    outline: none;
+}
+
+.pageGame .finish .finish_submit {
+    display: block;
+}
+

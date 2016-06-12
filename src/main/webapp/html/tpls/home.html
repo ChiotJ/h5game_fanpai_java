@@ -1,0 +1,51 @@
+<img src="imgs/home/bg.png" alt="" ng-style="background_img" class="background_img">
+
+<div ng-style="main" class="main">
+    <img src="imgs/home/startGame1.png" alt="" ng-style="startGame" class="startGame" img-button
+         ng-click="startGameClick()">
+    <img src="imgs/home/rules1.png" alt="" ng-style="rules" class="rules" img-button
+         ng-click="rulesOpenClick()">
+    <img src="imgs/home/prize1.png" alt="" ng-style="prize" class="prize" img-button
+         ng-click="prizeOpenClick()">
+    <img src="imgs/home/ranking1.png" alt="" ng-style="ranking" class="ranking" img-button
+         ng-click="rankingOpenClick()">
+
+    <div ng-style="notice" class="notice">
+        郑州华润万象城室内外三屏联播
+        邀您共享赛事！
+    </div>
+
+
+    <div ng-style="detail" class="detail absolute" id="prizeDetail">
+        <img src="imgs/home/prizeDetail.png" alt="" class="absolute" ng-style="prizeDetail">
+        <img src="imgs/home/prizeClose.png" alt="" class="absolute" ng-style="prizeClose"
+             ng-click="prizeCloseClick()">
+    </div>
+
+    <div ng-style="detail" class="detail absolute" id="rulesDetail">
+        <img src="imgs/home/rulesDetail.png" alt="" class="absolute" ng-style="rulesDetail">
+        <img src="imgs/home/rulesClose.png" alt="" class="absolute" ng-style="rulesClose"
+             ng-click="rulesCloseClick()">
+        <div id="rulesContent" ng-style="rulesContent">
+            <div>
+                <img src="imgs/home/rules.png" alt="" ng-style="rulesContentImg">
+            </div>
+        </div>
+    </div>
+
+    <div ng-style="detail" class="detail absolute" id="rankingDetail">
+        <img src="imgs/home/rankingDetail.png" alt="" class="absolute" ng-style="rankingDetail">
+        <img src="imgs/home/rankingClose.png" alt="" class="absolute" ng-style="rankingClose"
+             ng-click="rankingCloseClick()">
+        <div id="rankingContent" ng-style="rankingContent">
+            <div>
+                <div ng-repeat="one in rankingList">
+                    <div ng-style="rankingContent_index">{{$index+1}}</div>
+                    <div ng-style="rankingContent_name">{{one.name | name}}</div>
+                    <div ng-style="rankingContent_time">{{one.time | time}}秒</div>
+                    <div ng-style="rankingContent_phone">{{one.phone | phone}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout charset="UTF-8" pattern="%d{HH:mm:ss} %p %c{1}:%L - %m%n"/>
+            <!--<ThresholdFilter level="OFF" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        </Console>
+
+        <RollingRandomAccessFile name="LogAppender" fileName="/opt/logs_gx2/log.log"
+                                 append="true" filePattern="/opt/logs_gx2/log_%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout charset="UTF-8">
+                <Pattern>%d{DEFAULT} %c(%M:%L)-[%t]-[%p] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="ErrorAppender"
+                                 fileName="/opt/logs_gx2/error.log" append="true"
+                                 filePattern="/opt/logs_gx2/error_%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout charset="UTF-8">
+                <Pattern>%d{DEFAULT} %c(%M:%L)-[%t]-[%p] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+        </RollingRandomAccessFile>
+
+    </Appenders>
+    <Loggers>
+        <root level="INFO">
+            <appender-ref ref="LogAppender"/>
+            <appender-ref ref="ErrorAppender"/>
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </Loggers>
+
+</Configuration>

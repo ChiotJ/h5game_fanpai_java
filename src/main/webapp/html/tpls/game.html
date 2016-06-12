@@ -1,0 +1,74 @@
+<img src="imgs/game/bg.png" alt="" ng-style="background_img" class="background_img absolute">
+<img src="imgs/game/game_bg.png" alt="" class="absolute" ng-style="game_bg">
+<img src="imgs/game/feiren.png" alt="" class="absolute" ng-style="feiren">
+<img src="imgs/game/home1.png" alt="" class="absolute" ng-style="home" img-button ng-click="backHomeClick()">
+<img src="imgs/game/start1.png" alt="" class="absolute" ng-style="start" start-game data-status="start" id="startAndRestart">
+<div id="cards" class="absolute" ng-style="gameDiv">
+    <div class="card" ng-style="card" ng-repeat="one in cards track by $index" data-pattern="{{one}}" game-card>
+        <img src="imgs/game/flag.png" class="face front" ng-style="face">
+        <img src="imgs/game/flag/{{one}}.png" class="face back" ng-style="face">
+    </div>
+</div>
+
+
+<div class="absolute" ng-style="rememberTime" id="rememberTime">
+    <div class="rememberTimeNum" ng-style="rememberTimeNum">
+        10
+    </div>
+</div>
+
+<div class="absolute" ng-style="gameRecordTime" id="gameRecordTime">
+    <div class="rememberTimeStr" ng-style="gameRecordTimeStr">
+        记录时间
+    </div>
+
+    <div class="rememberTimeNum" ng-style="gameRecordTimeNum">
+        0.0
+    </div>
+
+    <div class="rememberTimeStr" ng-style="gameRecordTimeStrMiao">
+        秒
+    </div>
+</div>
+
+
+<div class="finish" ng-style="finish" id="finish">
+    <img src="imgs/game/finish_bg.png" alt="" class="finish_bg">
+    <img src="imgs/game/finishClose.png" alt="" class="absolute" ng-style="finish_close" img-button
+         ng-click="finishCloseClick()">
+    <div class="absolute" ng-style="finish_main">
+        <div class="title" ng-style="finish_title">太棒啦！</div>
+        <div class="title" ng-style="finish_time">用时: {{gameTime}} 秒</div>
+
+        <div class="finish_input" ng-style="finish_input_div">
+            <input type="text" placeholder="请填写您的姓名" ng-style="finish_input" ng-model="username"
+                   onkeydown="$($('.finish_input')[0]).css('border-color', 'transparent');">
+        </div>
+        <div class="finish_input" ng-style="finish_input_div">
+            <input type="tel" placeholder="请填写手机号码" ng-style="finish_input" ng-model="phone"
+                   onkeydown="$($('.finish_input')[1]).css('border-color', 'transparent');">
+        </div>
+
+        <img src="imgs/game/submit1.png" alt="" img-button ng-style="finish_submit" class="finish_submit"
+             ng-click="finishSubmitClick()">
+    </div>
+</div>
+
+
+<div class="finish" ng-style="finish" id="finish_cheat">
+    <img src="imgs/game/finish_cheat_bg.png" alt="" class="finish_bg">
+    <img src="imgs/game/finishClose.png" alt="" class="absolute" ng-style="finish_close" img-button
+         ng-click="finishCloseClick()">
+    <div class="absolute" ng-style="finish_main">
+
+        <div class="title" ng-style="finish_cheat_time">用时: {{gameTime}} 秒</div>
+
+        <div class="title" ng-style="finish_cheat_title">超人的速度</div>
+
+        <div class="title" ng-style="finish_cheat_title">我们不记录哦~</div>
+
+        <img src="imgs/game/human1.png" alt="" img-button ng-style="finish_submit" class="finish_submit"
+             ng-click="finishCloseClick()">
+    </div>
+</div>
+
